@@ -1,0 +1,28 @@
+ion-card {
+    --background: rgb(250, 250, 250);
+    --color: #f7fcfc;
+    height: 150px;
+    width: 120px;
+  }
+  
+  ion-card-title {
+    --color: #030e0c;
+  }
+  s
+  ion-card-subtitle {
+    --color: #11211f;
+  }
+  ion-img{
+      height: 60px;
+      width:80px;
+  }
+
+  .block{
+    width:100%;height:auto;display:flex;
+  }
+  .b1,.b2{
+    width:50%;height:100px;margin:10px;
+  }
+  
+
+  

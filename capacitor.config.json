@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "vda_hrms",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

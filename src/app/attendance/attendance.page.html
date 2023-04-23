@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Attendance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <strong><h4 style="text-align: center;">Today's Date :- {{today | date:"dd/MM/yyyy"}}</h4></strong>
+     <h6 style="text-align: center;">{{latitude}}::{{longitude}}</h6>
+  <ion-row>
+
+    
+    <ion-button class="login-button" (click)="addPhotoToGallery()" expand="block">Punch In</ion-button>
+    <ion-button class="login-button" (click)="Mark()" expand="block">Mark Attendance</ion-button>
+    <ion-button class="login-button" (click)="PunchOut()" expand="block">Punch Out</ion-button>
+   </ion-row>
+</ion-content>

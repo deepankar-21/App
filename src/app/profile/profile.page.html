@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-image: url('../../assets/icon/bg.jpeg');">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+      
+    </ion-toolbar>
+  </ion-header>
+  
+  <div class="container">
+  <h1 style="margin-left: 70px; margin-top: 20px;"  size="large">{{erpUser.User_name}}</h1>
+    <p style="margin-left: 120px;">{{erpUser.Designation}}</p>
+    <p style="margin-left: 50px;"><ion-icon name="location"></ion-icon>&nbsp;&nbsp;{{erpUser.emp_permanent_addr_city}}</p>
+    <p style="margin-left: 50px;"><ion-icon name="call"></ion-icon>&nbsp;&nbsp;+91-{{erpUser.mobile}}</p>
+    <p style="margin-left: 50px;"><ion-icon name="mail"></ion-icon>&nbsp;&nbsp;{{erpUser.email}}</p>
+  </div>
+
+  <div class="container" style="margin-top: 30px;">
+    <ion-card>
+      
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+          
+              <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;
+          
+            <ion-label>Employee ID:-  VDA-{{erpUser.emp_id}}</ion-label>
+          </ion-item>
+    
+          <ion-item>
+          
+            <ion-icon name="calendar-number"></ion-icon>&nbsp;&nbsp;&nbsp;
+          
+            <ion-label>Date of Birth:-   {{erpUser.DOB |  date:"dd/MM/yyyy"}}</ion-label>
+          </ion-item>
+    
+          <ion-item>
+           
+            <ion-icon name="logo-usd"></ion-icon>&nbsp;&nbsp;&nbsp;
+           
+            <ion-label>Basic Pay:-  56100</ion-label>
+          </ion-item>
+    
+          <ion-item lines="none">
+      
+            <ion-icon name="walk"></ion-icon>&nbsp;&nbsp;&nbsp;
+           
+            <ion-label>Retirement Age:-  {{erpUser.retirement_age}}</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+      
+            <ion-icon name="ribbon"></ion-icon>&nbsp;&nbsp;&nbsp;
+         
+          <ion-label>Retirement Date:-  {{erpUser.retirement_date |  date:"dd/MM/yyyy"}}</ion-label>
+        </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

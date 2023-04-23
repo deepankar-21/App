@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Salary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col size="12">
+     <ion-card color="light">
+       <ion-card-header>
+         
+       </ion-card-header>
+     
+       <ion-card-content>
+         <ion-label>Select Year</ion-label>
+         <ion-item>
+           <ion-select placeholder="Select Year" [(ngModel)]="salaryObj['fin_year']">
+             <ion-select-option *ngFor="let item of year" [value]="item.value"  >{{item.label}}</ion-select-option>
+           </ion-select>
+         </ion-item> 
+        <br>
+        <ion-label>Select Month</ion-label>
+         <ion-item>
+           <ion-select   placeholder="Select Month" [(ngModel)]="salaryObj['month']">
+             <ion-select-option *ngFor="let item of month" [value]="item.value"  >{{item.label}}</ion-select-option>
+           </ion-select>
+         </ion-item> 
+        <br>
+       
+       </ion-card-content>
+     </ion-card>
+    </ion-col>
+
+    <ion-button class="login-button" (click)="getsalaryData()" expand="block">Download</ion-button>
+   </ion-row>
+</ion-content>

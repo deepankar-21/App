@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h4 style="text-align: center;">{{erpUser.User_name}}</h4>
+  <h6 style="text-align: center;">{{erpUser.Designation}}</h6>
+  <div class="block">
+    <div class="b1">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="../../assets/icon/profile.png" alt=""></ion-img>
+        </ion-card-header>
+        <a routerLink="/profile"> <h5 style="color: rgb(29, 17, 18);text-align: center;">Profile</h5></a>
+      </ion-card>
+    </div>
+    <div class="b2">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="../../assets/icon/salary.png" alt=""></ion-img>
+        </ion-card-header>
+        <a routerLink="/salary"> <h5 style="color: rgb(29, 17, 18);text-align: center;"> Salary</h5></a>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="block" style="margin-top: 70px;">
+    <div class="b1">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="../../assets/icon/ITR.png" alt=""></ion-img>
+        </ion-card-header>
+        <a routerLink="/itr"> <h5 style="color: rgb(29, 17, 18);text-align: center;">ITR</h5></a>
+      </ion-card>
+    </div>
+    <div class="b2">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="../../assets/icon/leave.png" alt=""></ion-img>
+        </ion-card-header>
+        <a routerLink="/leaves"> <h5 style="color: rgb(29, 17, 18);text-align: center;">Leave</h5></a>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="block" style="margin-top:70px;">
+    <div class="b1">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="../../assets/icon/attendance.png" alt=""></ion-img>
+        </ion-card-header>
+        <a routerLink="/attendance"> <h5 style="color: rgb(29, 17, 18);text-align: center;">Attendance</h5></a>
+      </ion-card>
+    </div>
+    <div class="b2">
+      <ion-card>
+        <ion-card-header>
+          <ion-img src="../../assets/icon/user.png" alt=""></ion-img>
+        </ion-card-header>
+        <a routerLink="/view-attendance"> <h5 style="color: rgb(29, 17, 18);text-align: center;">View Attendance</h5></a>
+      </ion-card>
+    </div>
+  </div>
+  
+</ion-content>

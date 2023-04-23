@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ITR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col size="12">
+     <ion-card color="light">
+       <ion-card-header>
+         
+       </ion-card-header>
+     
+       <ion-card-content>
+         <ion-label>Select Financial Year</ion-label>
+         <ion-item>
+           <ion-select  interface="popover" placeholder="Select Year" [(ngModel)]="itrObj['fin_year']">
+             <ion-select-option *ngFor="let item of year" [value]="item.value"  >{{item.label}}</ion-select-option>
+           </ion-select>
+         </ion-item> 
+        <br>
+      
+       </ion-card-content>
+     </ion-card>
+    </ion-col>
+
+    <ion-button class="login-button" (click)="getITRData()" expand="block">Download IT Report</ion-button>
+   </ion-row>
+</ion-content>

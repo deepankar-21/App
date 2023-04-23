@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Leaves</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="!leave_flag">
+  <ion-row>
+    <ion-col size="12">
+     <ion-card color="light">
+       <ion-card-header>
+         
+       </ion-card-header>
+     
+       <ion-card-content>
+         <ion-label>Select Year</ion-label>
+         <ion-item>
+           <ion-select  interface="popover" placeholder="Select Year" [(ngModel)]="leaveObj['fin_year']">
+             <ion-select-option *ngFor="let item of year" [value]="item.value"  >{{item.label}}</ion-select-option>
+           </ion-select>
+         </ion-item> 
+        <br>
+        <ion-label>Select Month</ion-label>
+         <ion-item>
+           <ion-select  interface="popover" placeholder="Select Month" [(ngModel)]="leaveObj['month']">
+             <ion-select-option *ngFor="let item of month" [value]="item.value"  >{{item.label}}</ion-select-option>
+           </ion-select>
+         </ion-item> 
+        <br>
+       
+       </ion-card-content>
+     </ion-card>
+    </ion-col>
+
+    <ion-button class="login-button" (click)="view()" expand="block">View</ion-button>
+   </ion-row>
+</ion-content>
+
+
+<ion-content [fullscreen]="true" *ngIf="leave_flag">
+  <ion-row>
+    <ion-col size="12">
+     <ion-card color="light">
+       <ion-card-header>
+         
+       </ion-card-header>
+     
+       <ion-card-content>
+         <ion-label>Select Levae</ion-label>
+         <ion-item>
+           <ion-select  interface="popover" placeholder="Types of Leaves" [(ngModel)]="applyLeaveObj['type_of_leave']">
+             <ion-select-option *ngFor="let item of leavetype" [value]="item.value"  >{{item.label}}</ion-select-option>
+           </ion-select>
+         </ion-item> 
+        <br>
+        
+          <ion-label>From date</ion-label>
+        <ion-item>  
+          <ion-input type="date"  [(ngModel)]="applyLeaveObj['from_date']"></ion-input>
+        </ion-item>
+        <br>
+        <ion-label>To date</ion-label>
+        <ion-item>  
+          <ion-input type="date"  [(ngModel)]="applyLeaveObj['to_date']"></ion-input>
+        </ion-item>
+        <br>
+
+        <ion-textarea label="Reason" labelPlacement="floating" fill="outline" placeholder="Enter Reason" [(ngModel)]="applyLeaveObj['reason']"></ion-textarea>
+       
+       </ion-card-content>
+     </ion-card>
+
+     
+    
+    </ion-col>
+   
+   
+   
+    <ion-button class="login-button" (click)="apply()" expand="block">Apply Leave</ion-button>
+   </ion-row>
+</ion-content>

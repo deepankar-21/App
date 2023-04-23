@@ -1,0 +1,7 @@
+{
+  "name": "vda_hrms",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
