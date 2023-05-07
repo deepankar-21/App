@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  API_URL: 'http://localhost/restAPI/'
+       production: false,
+      //apiHost:"http://localhost",
+      apiHost:"preprod.vda.erpupda.co.in",
+      apiPort: 3016,
+      // apiPort: 3000,
+      // loginWithPassword: true
 };
 
 /*

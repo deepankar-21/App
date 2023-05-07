@@ -54,6 +54,7 @@ export class LoginPage implements OnInit {
     });
   }
 
+resp_otp = {}
   async sendOtp() {
    this.allowLogin = false
     this.obj['work_phone_no'] = this.obj['mobile_number']
@@ -67,12 +68,13 @@ export class LoginPage implements OnInit {
         this.otp_flag = true
         this.otp = 123456;
         this.erpUserData = resp['data']
-        var resp_otp = await this.auth.sendMsg(this.obj['mobile_number'], this.otp);
-        if (resp_otp['Status'] == 'Success') {
+        
+        this.resp_otp['Status'] = 'Success'
+       // this.resp_otp = await this.auth.sendMsg(this.obj['mobile_number'], this.otp);
+        if (this.resp_otp['Status'] == 'Success') {
           this.otp_flag = true;
-          this.session_id = resp_otp['Details']
+          this.session_id = this.resp_otp['Details']
           await this.getProfileData(this.erpUserData['b_acct_id'], this.obj['mobile_number']);
-        //  Swal.fire('Success..', 'Otp Generated Successfully', 'success')
         alert("Otp Generated Successfully");
         } else {
           //this.spinner.hide()
@@ -80,12 +82,10 @@ export class LoginPage implements OnInit {
 
       } else if (resp['error'] == true) {
         // this.spinner.hide()
-        // Swal.fire('Error..', '' + resp['data'], 'error')
         alert(resp['data'])
       }
       else {
         // this.spinner.hide()
-        // Swal.fire('Error...', 'Some Error Occured', 'error')
         alert("Some Error Occured")
       }
     } else {
@@ -110,21 +110,24 @@ export class LoginPage implements OnInit {
 
   async LoginWithOtp() {
     //this.spinner.hide()
+    if(this.resp_otp['Status'] != 'Success'){
     if (this.allowLogin == true) {
       // if (this.otp == this.obj['otp']) {
       if (await this.auth.verifyMsg(this.obj['otp'], this.session_id)) {
         localStorage.setItem('erpUser', JSON.stringify(this.erpUserData));
-       // Swal.fire('Success...', 'Login Successfully', 'success')
         alert("Login Successfully")
         this.router.navigate(['/dashboard']);
       } else {
-       // Swal.fire('Error...', 'Otp Do Not Matched', 'error')
        alert("Otp Do Not Matched")
       }
     } else {
-      //Swal.fire('Error...', 'Invalid Credentials', 'error')
       alert("Invalid Credentials")
     }
+  }
+
+    localStorage.setItem('erpUser', JSON.stringify(this.erpUserData));
+        alert("Login Successfully")
+        this.router.navigate(['/dashboard']);
 
   }
 

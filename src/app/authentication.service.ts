@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthenticationService {
 
-  API_URL = environment.API_URL;
+ // API_URL = environment.API_URL;
   
   userLogin(req: any){
    // return this.http.post(`${this.API_URL}login`,req);
@@ -25,12 +25,16 @@ export class AuthenticationService {
 
 
   apiProtocol = 'https';
-  uiHost = ''; apiHost = '';
-  apiPort = 3000;
+  apiHost = '';
+  uiHost=environment.apiHost 
+   
+  //apiPort = 3000;
 
   constructor(private http: HttpClient) {
+    console.log("ddd",this.uiHost)
 
-    this.uiHost = window.location.hostname;
+    //this.uiHost = window.location.hostname;
+  
     if (this.uiHost == 'preprod.vda.erpupda.co.in') {
       this.httpUrl = "https://preprod.vda.erpupda.co.in:3010/portal";
       this.main_httpUrl = "https://preprod.vda.erpupda.co.in:3010";
