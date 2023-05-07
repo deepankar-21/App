@@ -1,4 +1,8 @@
 export const environment = {
   production: true,
-  API_URL: 'http://localhost/restAPI/'
+  //apiHost:"http://localhost",
+  apiHost:"preprod.vda.erpupda.co.in",
+  //apiPort: 3010,
+  // apiPort: 3000,
+  // loginWithPassword: true
 };
